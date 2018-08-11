@@ -19,7 +19,7 @@ public class ShipLogic : SerializedMonoBehaviour
     int m_power;
 
     public int maxLife { get { return m_maxLife; } }
-    public int life { get { return m_life; } }
+    public int life { get { return m_life; } set { m_life = value; } }
     public int speed { get { return m_speed; } }
     public int fireRate { get { return m_fireRate; } }
     public int power { get { return m_power; } }
@@ -55,6 +55,7 @@ public class ShipLogic : SerializedMonoBehaviour
 
     private void Start()
     {
+        m_life = int.MaxValue;
         updateModifierStats();
     }
 

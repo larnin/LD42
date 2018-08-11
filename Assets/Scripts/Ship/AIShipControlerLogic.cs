@@ -3,14 +3,16 @@ using System.Collections;
 
 public class AIShipControlerLogic : MonoBehaviour
 {
+    ShipLogic m_ship;
+    LifebarLogic m_lifebar;
 
-    // Use this for initialization
-    void Start()
+
+    private void Awake()
     {
-
+        m_ship = GetComponent<ShipLogic>();
+        m_lifebar = GetComponentInChildren<LifebarLogic>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -23,8 +25,24 @@ public class AIShipControlerLogic : MonoBehaviour
 
     void onTriggerProjectile(ProjectileDataLogic p)
     {
-        if (p == null)
+        if (p == null || p.sender.GetComponent<PlayerShipControlerLogic>() == null)
             return;
 
+        m_ship.life -= p.power;
+        m_lifebar.show(m_ship.life, m_ship.maxLife);
+
+        Destroy(p.gameObject);
+
+        if (m_ship.life <= 0)
+            onKill();
+    }
+
+    void onKill()
+    {
+        var loot = LootManagerLogic.instance.getRandomLoot();
+        if(loot != null)
+            Instantiate(loot, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
     }
 }

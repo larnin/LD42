@@ -5,6 +5,7 @@ using System;
 [Serializable]
 public abstract class ModifierBase
 {
+    public Texture2D m_image;
     public int life;
     public int speed;
     public int fireRate;
