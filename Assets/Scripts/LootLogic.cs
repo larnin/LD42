@@ -24,9 +24,19 @@ public class LootLogic : SerializedMonoBehaviour
         modifier.power = (int)((float)modifier.power * m_baseModifierValue + d.Next(rand) * GameInfos.level);
     }
 
+    private void Start()
+    {
+        LootManagerLogic.instance.add(this);
+    }
+
     void Update()
     {
         float angle = transform.rotation.eulerAngles.z + m_rotationSpeed * Time.deltaTime;
         transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    private void OnDestroy()
+    {
+        LootManagerLogic.instance.remove(this);
     }
 }

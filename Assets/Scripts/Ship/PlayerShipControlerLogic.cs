@@ -14,7 +14,6 @@ public class PlayerShipControlerLogic : MonoBehaviour
     [SerializeField] float m_rotSpeed = 100;
 
     ShipLogic m_ship;
-    Rigidbody2D m_rigidbody;
     ParticleSystem m_particleSystem;
 
     Vector2 m_speed;
@@ -23,13 +22,15 @@ public class PlayerShipControlerLogic : MonoBehaviour
     private void Awake()
     {
         m_ship = GetComponent<ShipLogic>();
-        m_rigidbody = GetComponent<Rigidbody2D>();
         m_particleSystem = GetComponentInChildren<ParticleSystem>();
         m_particleSystem.Stop();
     }
     
     void Update()
     {
+        if (GameInfos.paused)
+            return;
+
         Vector2 dir = new Vector2(Input.GetAxisRaw(horizontalAxis), Input.GetAxisRaw(verticalAxis));
 
         if (dir.sqrMagnitude < m_deadZone * m_deadZone)

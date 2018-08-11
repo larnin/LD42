@@ -15,6 +15,8 @@ public class AIShipControlerLogic : MonoBehaviour
 
     void Update()
     {
+        if (GameInfos.paused)
+            return;
 
     }
 

@@ -10,6 +10,9 @@ public class ProjectileDataLogic : MonoBehaviour
 
     private void Update()
     {
+        if (GameInfos.paused)
+            return;
+
         life -= Time.deltaTime;
         if (life <= 0)
             Destroy(gameObject);
