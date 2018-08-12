@@ -128,6 +128,7 @@ public class MainMenuLogic : SerializedMonoBehaviour
     {
         GameInfos.clear();
         GameInfos.modifiers = m_startModifiers;
+        GameInfos.playerModifierCount = m_startModifiers.Count;
         GameInfos.hardmode = false;
         SceneSystem.changeScene(gameName);
     }
@@ -136,6 +137,7 @@ public class MainMenuLogic : SerializedMonoBehaviour
     {
         GameInfos.clear();
         GameInfos.modifiers = m_startModifiers;
+        GameInfos.playerModifierCount = m_startModifiers.Count;
         GameInfos.hardmode = true;
         SceneSystem.changeScene(gameName);
     }

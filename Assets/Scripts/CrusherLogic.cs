@@ -106,7 +106,7 @@ public class CrusherLogic : MonoBehaviour
 
     private void Update()
     {
-        if (!m_active)
+        if (!m_active || GameInfos.pauseMenu)
             return;
 
         GameInfos.paused = true;
@@ -191,6 +191,7 @@ public class CrusherLogic : MonoBehaviour
         {
             m_ship.modifiers[m_crusherPosition] = m_modifier;
             m_ship.modifiers.RemoveAt(m_crusherPosition + 1);
+            GameInfos.playerModifierCount--;
         }
 
         m_ship.updateModifierStats();

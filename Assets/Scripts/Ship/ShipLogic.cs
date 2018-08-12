@@ -63,6 +63,9 @@ public class ShipLogic : SerializedMonoBehaviour
 
     private void Update()
     {
+        if (GameInfos.paused)
+            return;
+
         foreach (var m in modifiers)
             m.update(this);
     }

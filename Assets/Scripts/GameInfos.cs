@@ -7,6 +7,7 @@ public static class GameInfos
 {
     public static int level = 0; //floor index, start at zero
     public static bool paused = false;
+    public static bool pauseMenu = false;
     public static int playerModifierCount = 6;
     public static bool hardmode;
     public static List<ModifierBase> modifiers;
@@ -17,6 +18,7 @@ public static class GameInfos
     {
         level = 0;
         paused = false;
+        pauseMenu = false;
         playerModifierCount = 0;
         hardmode = false;
         modifiers = null;

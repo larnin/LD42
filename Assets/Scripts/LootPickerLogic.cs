@@ -67,6 +67,7 @@ public class LootPickerLogic : MonoBehaviour
 
     void useTeleporter()
     {
-        Debug.Log("poop");
+        if (!GameInfos.hardmode)
+            GameInfos.playerModifierCount++;
     }
 }
