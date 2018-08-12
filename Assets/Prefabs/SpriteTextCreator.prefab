@@ -1,0 +1,603 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1533779732374316}
+  m_IsPrefabAsset: 1
+--- !u!1 &1533779732374316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4479181064628952}
+  - component: {fileID: 114957356176766626}
+  m_Layer: 0
+  m_Name: SpriteTextCreator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4479181064628952
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1533779732374316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.18247585, y: 0.25174135, z: 0.058047295}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114957356176766626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1533779732374316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84aabdb4ac2929145840dcad83796c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300020, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300022, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300024, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300026, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300000, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300002, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300004, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300006, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300008, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300010, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300012, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300014, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300016, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300018, guid: a871a0572a6095a4e8f93b2f12530f6c, type: 3}
+    - {fileID: 21300000, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300002, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300004, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300006, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300008, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300010, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300012, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300014, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300016, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300018, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300020, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300022, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300024, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300026, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300028, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300030, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300032, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300034, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300036, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300038, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300040, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300042, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300044, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300046, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300048, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    - {fileID: 21300050, guid: ead11e859aa2c1048b37e5a867bb2e44, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: m_letters
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.Char, mscorlib],[UnityEngine.Sprite,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.Char, mscorlib]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 40
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: A
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: B
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: C
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: D
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 7
+    - Name: 
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 9
+    - Name: 
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: a
+    - Name: 
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: b
+    - Name: 
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: c
+    - Name: 
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: d
+    - Name: 
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: e
+    - Name: 
+      Entry: 10
+      Data: 18
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: f
+    - Name: 
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: g
+    - Name: 
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: h
+    - Name: 
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: i
+    - Name: 
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: j
+    - Name: 
+      Entry: 10
+      Data: 23
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: k
+    - Name: 
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: l
+    - Name: 
+      Entry: 10
+      Data: 25
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: m
+    - Name: 
+      Entry: 10
+      Data: 26
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: n
+    - Name: 
+      Entry: 10
+      Data: 27
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: o
+    - Name: 
+      Entry: 10
+      Data: 28
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: p
+    - Name: 
+      Entry: 10
+      Data: 29
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: q
+    - Name: 
+      Entry: 10
+      Data: 30
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: r
+    - Name: 
+      Entry: 10
+      Data: 31
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: s
+    - Name: 
+      Entry: 10
+      Data: 32
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: t
+    - Name: 
+      Entry: 10
+      Data: 33
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: u
+    - Name: 
+      Entry: 10
+      Data: 34
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: v
+    - Name: 
+      Entry: 10
+      Data: 35
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: w
+    - Name: 
+      Entry: 10
+      Data: 36
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: x
+    - Name: 
+      Entry: 10
+      Data: 37
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: y
+    - Name: 
+      Entry: 10
+      Data: 38
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: z
+    - Name: 
+      Entry: 10
+      Data: 39
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  m_spacing: 0.25

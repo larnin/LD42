@@ -56,6 +56,8 @@ public class AIShipControlerLogic : MonoBehaviour
         if(loot != null)
             Instantiate(loot, transform.position, Quaternion.identity);
 
+        GameInfos.killCount++;
+
         Destroy(gameObject);
     }
 }
