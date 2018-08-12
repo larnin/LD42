@@ -491,6 +491,9 @@ MonoBehaviour:
   m_baseSpeed: 1
   m_baseFireRate: 10
   m_basePower: 3
+  m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
+    type: 2}
+  m_deathObjectDestroyTime: 0.2
 --- !u!114 &114833200986878482
 MonoBehaviour:
   m_ObjectHideFlags: 1

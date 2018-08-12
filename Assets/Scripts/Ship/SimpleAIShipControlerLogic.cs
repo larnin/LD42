@@ -23,6 +23,8 @@ public  class SimpleAIShipControlerLogic : AIShipControlerLogic
         rot += m_baseRotationSpeed * m_ship.speed * Time.deltaTime;
         transform.rotation = Quaternion.Euler(0, 0, rot);
 
+        if (m_target == null)
+            return;
         if((m_target.transform.position - transform.position).sqrMagnitude < m_detectionRadius)
         {
             var dir = (m_target.transform.position - transform.position).normalized;

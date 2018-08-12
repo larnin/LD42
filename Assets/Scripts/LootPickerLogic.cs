@@ -28,7 +28,7 @@ public class LootPickerLogic : MonoBehaviour
 
     void Update()
     {
-        if (GameInfos.paused)
+        if (GameInfos.paused || m_ship == null)
             return;
 
         if((m_player.transform.position - m_exitPosition.position).sqrMagnitude < m_lootRadius * m_lootRadius)

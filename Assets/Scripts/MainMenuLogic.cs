@@ -13,6 +13,7 @@ public class MainMenuLogic : SerializedMonoBehaviour
 
     [SerializeField] List<Transform> m_buttons;
     [SerializeField] Transform m_cursor;
+    [SerializeField] GameObject m_howToScreen;
     [SerializeField] GameObject m_projectilePrefab;
     [SerializeField] Color m_projectileColor;
     [SerializeField] float m_projectileSpeed;
@@ -26,23 +27,28 @@ public class MainMenuLogic : SerializedMonoBehaviour
     float m_oldAxis;
     bool m_selected = false;
     int m_selectedPos;
+    bool m_howToShown = false;
 
     private void Start()
     {
         move(0);
+        m_howToScreen.SetActive(false);
     }
 
     private void Update()
     {
+        if (Input.GetButtonDown(cancelButton))
+            onCancel();
+
+        if (m_howToShown)
+            return;
+
         var axis = Input.GetAxisRaw(verticalAxis);
         if(Mathf.Abs(axis) > 0.5f && Mathf.Abs(m_oldAxis) < 0.5f)
             move(m_pos + (axis > 0 ? -1 : 1));
         if (Input.GetButtonDown(submitButton))
             onSubmit();
-        if (Input.GetButtonDown(cancelButton))
-            onCancel();
-
-
+        
         m_oldAxis = axis;
     }
 
@@ -89,7 +95,12 @@ public class MainMenuLogic : SerializedMonoBehaviour
 
     void onCancel()
     {
-
+        if (m_howToShown)
+        {
+            m_howToScreen.SetActive(false);
+            m_howToShown = false;
+            m_selected = false;
+        }
     }
 
     public void fire(GameObject projectile, GameObject sender, float rot, float speed, float life, Color color)
@@ -131,7 +142,8 @@ public class MainMenuLogic : SerializedMonoBehaviour
 
     void onHowTo()
     {
-
+        m_howToShown = true;
+        m_howToScreen.SetActive(true);
     }
 
     void onQuit()

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using DG.Tweening;
 
 public class ShipLogic : SerializedMonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ShipLogic : SerializedMonoBehaviour
     [SerializeField] int m_baseSpeed = 3;
     [SerializeField] int m_baseFireRate = 3;
     [SerializeField] int m_basePower = 3;
+    [SerializeField] GameObject m_deathPrefab;
 
     public bool fire { get; set; }
 
@@ -63,5 +65,19 @@ public class ShipLogic : SerializedMonoBehaviour
     {
         foreach (var m in modifiers)
             m.update(this);
+    }
+
+    private void OnDestroy()
+    {
+        var deathPrefab = m_deathPrefab;
+        var pos = transform.position;
+        DOVirtual.DelayedCall(0.1f, () =>
+        {
+            if (deathPrefab == null)
+                return;
+
+            var obj = Instantiate(deathPrefab);
+            obj.transform.position = pos;
+        });
     }
 }

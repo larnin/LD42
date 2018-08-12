@@ -47,16 +47,24 @@ public class AIShipControlerLogic : MonoBehaviour
         Destroy(p.gameObject);
 
         if (m_ship.life <= 0)
-            onKill();
+            onKill(true);
     }
 
-    void onKill()
+    public void kill()
     {
-        var loot = LootManagerLogic.instance.getRandomLoot();
-        if(loot != null)
-            Instantiate(loot, transform.position, Quaternion.identity);
+        onKill(false);
+    }
 
-        GameInfos.killCount++;
+    void onKill(bool dropLoot)
+    {
+        if (dropLoot)
+        {
+            var loot = LootManagerLogic.instance.getRandomLoot();
+            if (loot != null)
+                Instantiate(loot, transform.position, Quaternion.identity);
+
+            GameInfos.killCount++;
+        }
 
         Destroy(gameObject);
     }

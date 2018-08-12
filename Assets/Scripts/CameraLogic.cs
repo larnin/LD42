@@ -35,6 +35,9 @@ public class CameraLogic : SerializedMonoBehaviour
 
     void LateUpdate()
     {
+        if (m_target == null)
+            return;
+
         var targetPos = m_target.transform.position;
         targetPos.z -= vOffset;
 

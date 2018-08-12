@@ -131,6 +131,11 @@ public class PlayerShipControlerLogic : MonoBehaviour
         onProjectileCollide(collision.GetComponent<ProjectileDataLogic>());
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        onShipCollide(collision.gameObject.GetComponent<AIShipControlerLogic>());
+    }
+
     void onProjectileCollide(ProjectileDataLogic p)
     {
         if (p == null || p.sender == gameObject)
@@ -140,10 +145,28 @@ public class PlayerShipControlerLogic : MonoBehaviour
 
         Destroy(p.gameObject);
 
+        damage(p.power);
+    }
+
+    void onShipCollide(AIShipControlerLogic s)
+    {
+        if (s == null)
+            return;
+
+        s.kill();
+
         if (m_invincibilityTime > 0)
             return;
 
-        m_ship.life -= p.power;
+        damage(1);
+    }
+
+    void damage(int power)
+    {
+        if (m_invincibilityTime > 0)
+            return;
+
+        m_ship.life -= power;
         Event<UpdateUIEvent>.Broadcast(new UpdateUIEvent(m_ship));
 
         m_invincibilityTime = m_invincibilityDuration;
@@ -154,6 +177,7 @@ public class PlayerShipControlerLogic : MonoBehaviour
 
     void ondeath()
     {
-
+        Event<DieEvent>.Broadcast(new DieEvent());
+        Destroy(gameObject);
     }
 }
