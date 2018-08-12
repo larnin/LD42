@@ -53,7 +53,7 @@ public class ShipLogic : SerializedMonoBehaviour
             m.updateStats(this);
     }
 
-    private void Start()
+    private void Awake()
     {
         m_life = int.MaxValue;
         updateModifierStats();

@@ -25,7 +25,12 @@ public class PlayerShipControlerLogic : MonoBehaviour
         m_particleSystem = GetComponentInChildren<ParticleSystem>();
         m_particleSystem.Stop();
     }
-    
+
+    private void Start()
+    {
+        Event<UpdateUIEvent>.Broadcast(new UpdateUIEvent(m_ship));
+    }
+
     void Update()
     {
         if (GameInfos.paused)

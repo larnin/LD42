@@ -152,10 +152,13 @@ public class CrusherLogic : MonoBehaviour
 
         if (texts.Count > 0)
             infos.line1.setText(texts[0], colors[0]);
+        else infos.line1.setText("", Color.white);
         if (texts.Count > 1)
             infos.line2.setText(texts[1], colors[1]);
+        else infos.line2.setText("", Color.white);
         if (texts.Count > 2)
             infos.line3.setText(texts[2], colors[2]);
+        else infos.line3.setText("", Color.white);
     }
 
     void setCruherIndex(int index)

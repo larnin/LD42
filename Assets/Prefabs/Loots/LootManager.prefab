@@ -51,5 +51,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ffa78a48ca06d4384eb97c0cecd458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_noLootProbability: 0
-  m_loots: []
+  m_noLootProbability: 10
+  m_loots:
+  - fixedWeight: 1
+    levelWeight: 0.1
+    loot: {fileID: 1491184546066754, guid: bf6c22dc4b0711840a830310b83392ac, type: 2}
+  - fixedWeight: 0.1
+    levelWeight: 0.2
+    loot: {fileID: 1326711227502264, guid: e93551765e8077b4e8ac1c84b74a34b4, type: 2}
+  - fixedWeight: 1
+    levelWeight: 0.1
+    loot: {fileID: 1888193314821264, guid: 2e702bb763035734c9a42901964f73bc, type: 2}
+  - fixedWeight: 0.1
+    levelWeight: 0.2
+    loot: {fileID: 1148601780773484, guid: 636b1eae6fe173b4fbde3e3d438ce17d, type: 2}
+  - fixedWeight: 0
+    levelWeight: 0.3
+    loot: {fileID: 1604131545522536, guid: 0011b928b38c33d4b861f844b6728c30, type: 2}
+  - fixedWeight: 0.1
+    levelWeight: 0.2
+    loot: {fileID: 1101601801952536, guid: 0ef699b5627e5934a99ef526322d6121, type: 2}
+  - fixedWeight: 0.1
+    levelWeight: 0.2
+    loot: {fileID: 1706767069214234, guid: 5b1b45013f8712649bb07ed9a17724b1, type: 2}
+  - fixedWeight: 0
+    levelWeight: 0.3
+    loot: {fileID: 1423563623707534, guid: 1eee58511013a8f4481abb802c6f0339, type: 2}
+  - fixedWeight: 0
+    levelWeight: 0.3
+    loot: {fileID: 1099532016148790, guid: 6078e2040982f0d42a4b03a8224ae274, type: 2}
+  - fixedWeight: 1
+    levelWeight: 0.1
+    loot: {fileID: 1999373188861728, guid: 012a5739f3d990f4b9bdaba242cce198, type: 2}
+  - fixedWeight: 1
+    levelWeight: 0.1
+    loot: {fileID: 1891816927078658, guid: cd3bf8eafa551b44397f8795492b2949, type: 2}
+  - fixedWeight: 0.1
+    levelWeight: 0.2
+    loot: {fileID: 1823795694505174, guid: b9c50fcf8bfb9dd499e654d8bf2a9def, type: 2}
+  - fixedWeight: 0
+    levelWeight: 0.3
+    loot: {fileID: 1059895118111336, guid: 566255255b0680c44b7ba8d7f57eebd9, type: 2}
+  - fixedWeight: 0.1
+    levelWeight: 0.2
+    loot: {fileID: 1741580676577006, guid: 1c9901252e8e37242b90f7000a78dcc3, type: 2}
+  - fixedWeight: 1
+    levelWeight: 0.2
+    loot: {fileID: 1931144638340116, guid: 74739bdf18715a74ebc35e248530eedb, type: 2}
+  - fixedWeight: 1
+    levelWeight: 0.2
+    loot: {fileID: 1893790171082216, guid: 544a887d84c61c24f9fe4802e8600472, type: 2}
+  - fixedWeight: 0
+    levelWeight: 0.4
+    loot: {fileID: 1231551528628698, guid: eaa1084a9ba29eb4ea441ef889975f2a, type: 2}
+  - fixedWeight: 0
+    levelWeight: 0.4
+    loot: {fileID: 1892883542916766, guid: 8563d4dcab757f04a874954a116ed072, type: 2}
