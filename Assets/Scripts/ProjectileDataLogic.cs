@@ -8,7 +8,7 @@ public class ProjectileDataLogic : MonoBehaviour
     public float life;
     public float speed;
 
-    private void Update()
+    protected virtual void Update()
     {
         if (GameInfos.paused)
             return;

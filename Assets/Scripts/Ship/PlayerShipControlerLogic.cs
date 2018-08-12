@@ -12,18 +12,23 @@ public class PlayerShipControlerLogic : MonoBehaviour
     [SerializeField] float m_acceleration = 5;
     [SerializeField] float m_deadZone = 0.1f;
     [SerializeField] float m_rotSpeed = 100;
+    [SerializeField] float m_invincibilityDuration = 1.0f;
+    [SerializeField] float m_invincibilityBlinkSpeed = 5;
 
     ShipLogic m_ship;
     ParticleSystem m_particleSystem;
+    SpriteRenderer m_renderer;
 
     Vector2 m_speed;
     float m_orientation;
+    float m_invincibilityTime;
 
     private void Awake()
     {
         m_ship = GetComponent<ShipLogic>();
         m_particleSystem = GetComponentInChildren<ParticleSystem>();
         m_particleSystem.Stop();
+        m_renderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -111,5 +116,44 @@ public class PlayerShipControlerLogic : MonoBehaviour
             m_particleSystem.Play();
 
         m_ship.fire = fireDir.sqrMagnitude > 0.1 * 0.1;
+
+        m_invincibilityTime -= Time.deltaTime;
+        Color c = m_renderer.color;
+        if (m_invincibilityTime > 0)
+        {
+            m_renderer.color = new Color(c.r, c.g, c.b, Mathf.Sin(m_invincibilityTime * m_invincibilityBlinkSpeed) / 4 + 0.75f);
+        }
+        else m_renderer.color = new Color(c.r, c.g, c.b);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        onProjectileCollide(collision.GetComponent<ProjectileDataLogic>());
+    }
+
+    void onProjectileCollide(ProjectileDataLogic p)
+    {
+        if (p == null || p.sender == gameObject)
+            return;
+
+        int power = p.power;
+
+        Destroy(p.gameObject);
+
+        if (m_invincibilityTime > 0)
+            return;
+
+        m_ship.life -= p.power;
+        Event<UpdateUIEvent>.Broadcast(new UpdateUIEvent(m_ship));
+
+        m_invincibilityTime = m_invincibilityDuration;
+
+        if (m_ship.life <= 0)
+            ondeath();
+    }
+
+    void ondeath()
+    {
+
     }
 }

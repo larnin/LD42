@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerUILogic : MonoBehaviour
 {
@@ -41,10 +42,14 @@ public class PlayerUILogic : MonoBehaviour
 
     void onUiUpdate(UpdateUIEvent e)
     {
-        for (int i = m_lifeBase.childCount - 1; i >= 0; i++)
-            Destroy(m_lifeBase.GetChild(i).gameObject);
-        for (int i = m_itemsBase.childCount - 1; i >= 0; i++)
-            Destroy(m_itemsBase.GetChild(i).gameObject);
+        List<GameObject> toDestroy = new List<GameObject>();
+
+        for(int i = 0; i < m_lifeBase.childCount; i++)
+            toDestroy.Add(m_lifeBase.GetChild(i).gameObject);
+        for (int i = 0; i < m_itemsBase.childCount; i++)
+            toDestroy.Add(m_itemsBase.GetChild(i).gameObject);
+        foreach (var g in toDestroy)
+            Destroy(g);
 
         m_life.setText("A " + e.ship.maxLife, m_lifeColor);
         m_speed.setText("B " + e.ship.speed, m_speedColor);

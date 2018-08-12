@@ -3,22 +3,33 @@ using System.Collections;
 
 public class AIShipControlerLogic : MonoBehaviour
 {
-    ShipLogic m_ship;
-    LifebarLogic m_lifebar;
+    protected ShipLogic m_ship;
+    protected LifebarLogic m_lifebar;
 
 
     private void Awake()
     {
         m_ship = GetComponent<ShipLogic>();
         m_lifebar = GetComponentInChildren<LifebarLogic>();
+
+        onAwake();
     }
+    protected virtual void onAwake() { }
+
+    private void Start()
+    {
+        onStart();
+    }
+    protected virtual void onStart() { }
 
     void Update()
     {
         if (GameInfos.paused)
             return;
 
+        onUpdate();
     }
+    protected virtual void onUpdate() { }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,7 +38,7 @@ public class AIShipControlerLogic : MonoBehaviour
 
     void onTriggerProjectile(ProjectileDataLogic p)
     {
-        if (p == null || p.sender.GetComponent<PlayerShipControlerLogic>() == null)
+        if (p == null || this == null || p.sender == null || p.sender.GetComponent<PlayerShipControlerLogic>() == null)
             return;
 
         m_ship.life -= p.power;

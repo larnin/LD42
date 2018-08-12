@@ -12,6 +12,8 @@ public class LootPickerLogic : MonoBehaviour
     GameObject m_button;
     ShipLogic m_ship;
 
+    Transform m_exitPosition;
+
     private void Awake()
     {
         m_button = transform.Find("Button").gameObject;
@@ -21,12 +23,22 @@ public class LootPickerLogic : MonoBehaviour
     private void Start()
     {
         m_ship = m_player.GetComponent<ShipLogic>();
+        m_exitPosition = GameObject.Find("Exit").transform;
     }
 
     void Update()
     {
         if (GameInfos.paused)
             return;
+
+        if((m_player.transform.position - m_exitPosition.position).sqrMagnitude < m_lootRadius * m_lootRadius)
+        {
+            m_button.SetActive(true);
+            m_button.transform.position = m_exitPosition.position + m_buttonOffset;
+            if (Input.GetButtonDown(lootButton))
+                useTeleporter();
+                return;
+        }
 
         var loot = LootManagerLogic.instance.getNearestLootInRadius(m_player.transform.position, m_lootRadius);
 
@@ -51,5 +63,10 @@ public class LootPickerLogic : MonoBehaviour
 
             Destroy(loot.gameObject);
         }
+    }
+
+    void useTeleporter()
+    {
+        Debug.Log("poop");
     }
 }
