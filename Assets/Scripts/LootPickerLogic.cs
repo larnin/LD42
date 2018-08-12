@@ -10,11 +10,17 @@ public class LootPickerLogic : MonoBehaviour
     [SerializeField] Vector3 m_buttonOffset;
 
     GameObject m_button;
+    ShipLogic m_ship;
 
     private void Awake()
     {
         m_button = transform.Find("Button").gameObject;
         m_button.SetActive(false);
+    }
+
+    private void Start()
+    {
+        m_ship = m_player.GetComponent<ShipLogic>();
     }
 
     void Update()
@@ -35,7 +41,15 @@ public class LootPickerLogic : MonoBehaviour
 
         if(Input.GetButtonDown(lootButton))
         {
-            //do something
+            if (m_ship.modifiers.Count < GameInfos.playerModifierCount)
+            {
+                m_ship.modifiers.Add(loot.modifier);
+                m_ship.updateModifierStats();
+                Event<UpdateUIEvent>.Broadcast(new UpdateUIEvent(m_ship));
+            }
+            else Event<CrushEvent>.Broadcast(new CrushEvent(loot.modifier, m_ship));
+
+            Destroy(loot.gameObject);
         }
     }
 }

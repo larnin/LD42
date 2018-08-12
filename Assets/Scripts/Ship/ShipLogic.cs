@@ -26,7 +26,7 @@ public class ShipLogic : SerializedMonoBehaviour
 
     public List<ModifierBase> modifiers = new List<ModifierBase>();
 
-    void updateModifierStats()
+    public void updateModifierStats()
     {
         int life = m_baseLife;
         int speed = m_baseSpeed;
