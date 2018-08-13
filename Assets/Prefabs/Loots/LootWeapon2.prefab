@@ -88,7 +88,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 21300000, guid: dc1334d08f083f543a5507c6a2cec897, type: 3}
-    - {fileID: 1412265532124674, guid: 795bc4197318a864083d363947b06e82, type: 2}
+    - {fileID: 1680973445033272, guid: 85580e6df90969946ac463e09c5274d4, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -141,13 +141,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 1
+      Data: 0
     - Name: 
       Entry: 4
       Data: 1
     - Name: 
       Entry: 4
-      Data: 1
+      Data: 0.79220295
     - Name: 
       Entry: 4
       Data: 1
