@@ -166,11 +166,11 @@ public class PlayerShipControlerLogic : MonoBehaviour
         if (s == null)
             return;
 
-        s.kill();
-
         if (m_invincibilityTime > 0)
             return;
 
+        s.kill();
+        
         damage(1);
     }
 

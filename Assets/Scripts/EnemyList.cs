@@ -35,4 +35,12 @@ public static class EnemyList
 
         return best;
     }
+
+    public static int getSumLife()
+    {
+        int life = 0;
+        foreach (var e in m_enemies)
+            life += e.GetComponent<ShipLogic>().life;
+        return life;
+    }
 }

@@ -25,9 +25,17 @@ public class LevelPopulatorLogic : MonoBehaviour
     [SerializeField] float m_spawnRadius;
     [SerializeField] float m_dontSpawnRadius;
     [SerializeField] GameObject m_exitPrefab;
+    [SerializeField] GameObject m_bossPrefab;
+    [SerializeField] int m_bossLevel = 9;
 
     private void Awake()
     {
+        if(m_bossLevel == GameInfos.level)
+        {
+            spawnBoss();
+            return;
+        }
+
         var rand = new StaticRandomGenerator<DefaultRandomGenerator>();
 
         int nb = m_enemyCountBase + new UniformIntDistribution((int)(m_minEnemyCountPerLevel * GameInfos.level), (int)(m_maxEnemyCountPerLevel * GameInfos.level) + 1).Next(rand);
@@ -82,5 +90,25 @@ public class LevelPopulatorLogic : MonoBehaviour
         var mob = Instantiate(m_exitPrefab);
         mob.transform.position = new Vector3(pos.x, pos.y, -1);
         mob.name = m_exitPrefab.name;
+    }
+
+    void spawnBoss()
+    {
+        var rand = new StaticRandomGenerator<DefaultRandomGenerator>();
+        Vector2 pos = Vector2.zero;
+        for (int j = 0; j < 10; j++)
+        {
+            pos = new UniformVector2SquareDistribution(-m_spawnRadius, m_spawnRadius, -m_spawnRadius, m_spawnRadius).Next(rand);
+            if (pos.sqrMagnitude < m_dontSpawnRadius * m_dontSpawnRadius)
+                continue;
+            break;
+        }
+
+        var mob = Instantiate(m_bossPrefab);
+        mob.transform.position = new Vector3(pos.x, pos.y, -1);
+
+        var exit = Instantiate(m_exitPrefab);
+        exit.transform.position = new Vector3(0, 200, -1);
+        exit.name = m_exitPrefab.name;
     }
 }
