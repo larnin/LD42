@@ -55,7 +55,7 @@ public class PlayerShipControlerLogic : MonoBehaviour
             dir = Vector2.zero;
 
         Vector2 targetSpeed = m_ship.speed * m_speedMultiplier * dir;
-        float acceleration = m_acceleration * m_speedMultiplier;
+        float acceleration = m_ship.speed * m_acceleration;
 
         if(targetSpeed.x > m_speed.x)
         {
@@ -144,6 +144,11 @@ public class PlayerShipControlerLogic : MonoBehaviour
         onShipCollide(collision.gameObject.GetComponent<AIShipControlerLogic>());
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        m_speed = Vector2.zero;
+    }
+
     void onProjectileCollide(ProjectileDataLogic p)
     {
         if (p == null || p.sender == gameObject)
@@ -176,7 +181,6 @@ public class PlayerShipControlerLogic : MonoBehaviour
 
         m_ship.life -= power;
         Event<UpdateUIEvent>.Broadcast(new UpdateUIEvent(m_ship));
-        Debug.Log(m_ship.life);
 
         m_invincibilityTime = m_invincibilityDuration;
 

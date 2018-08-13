@@ -409,7 +409,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  m_baseLife: 20
+  m_baseLife: 15
   m_baseSpeed: 1
   m_baseFireRate: 10
   m_basePower: 3

@@ -45,6 +45,9 @@ public class DashAIShipControler : AIShipControlerLogic
 
     protected override void onUpdate()
     {
+        if (m_target == null)
+            return;
+
         if (m_state == State.Idle)
             onIdle();
         else if (m_state == State.Dashing)
