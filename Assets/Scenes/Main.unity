@@ -914,19 +914,19 @@ MonoBehaviour:
       Data: 10
     - Name: m_baseFireRate
       Entry: 4
-      Data: 0.5
+      Data: 0.2
     - Name: m_powerMultiplier
       Entry: 4
-      Data: 1
+      Data: 0.3
     - Name: m_baseSpeed
       Entry: 4
-      Data: 1
+      Data: 5
     - Name: m_rateSpeed
       Entry: 4
-      Data: 0.25
+      Data: 0.5
     - Name: m_life
       Entry: 4
-      Data: 5
+      Data: 1
     - Name: m_color
       Entry: 7
       Data: UnityEngine.Color, UnityEngine.CoreModule

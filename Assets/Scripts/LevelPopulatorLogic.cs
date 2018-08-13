@@ -61,10 +61,10 @@ public class LevelPopulatorLogic : MonoBehaviour
             mob.transform.position = new Vector3(pos.x, pos.y, -1);
 
             Modifier m = new Modifier();
-            m.life = (int)e.levelLife;
-            m.speed = (int)e.levelSpeed;
-            m.fireRate = (int)e.levelFireRate;
-            m.power = (int)e.levelPower;
+            m.life = (int)(e.levelLife * GameInfos.level);
+            m.speed = (int)(e.levelSpeed * GameInfos.level);
+            m.fireRate = (int)(e.levelFireRate * GameInfos.level);
+            m.power = (int)(e.levelPower * GameInfos.level);
 
             var s = mob.GetComponent<ShipLogic>();
             s.modifiers.Add(m);

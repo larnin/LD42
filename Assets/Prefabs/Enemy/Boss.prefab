@@ -6804,7 +6804,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114029374454661078
@@ -7142,7 +7142,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114069796819558816
@@ -7458,7 +7458,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114077518285304970
@@ -7831,7 +7831,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114129020412208684
@@ -8147,7 +8147,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114129330803244510
@@ -8463,7 +8463,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114129799122739308
@@ -8836,7 +8836,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114164881522901442
@@ -9165,7 +9165,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114172199398885348
@@ -9481,7 +9481,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114176534167470266
@@ -9854,7 +9854,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114217829482662620
@@ -10350,7 +10350,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114326177054971426
@@ -10666,7 +10666,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114328355809654450
@@ -11017,7 +11017,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114350908890230478
@@ -11359,7 +11359,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114375999537294776
@@ -11732,7 +11732,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114398498733044074
@@ -12105,7 +12105,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114434167512304876
@@ -12421,7 +12421,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114446374503590508
@@ -12737,7 +12737,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114452768948237806
@@ -13066,7 +13066,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114461640059446694
@@ -13404,7 +13404,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114486443754263470
@@ -13720,7 +13720,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114503198760062676
@@ -14049,7 +14049,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114533858804048594
@@ -14400,7 +14400,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114569169839907400
@@ -14773,7 +14773,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114596639804150920
@@ -15089,7 +15089,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114606036240393244
@@ -15492,7 +15492,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114689990514037210
@@ -15869,7 +15869,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114710561094371192
@@ -16185,7 +16185,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114738108688136746
@@ -16545,7 +16545,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114823498585462122
@@ -16944,7 +16944,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114924729887942820
@@ -17260,7 +17260,7 @@ MonoBehaviour:
   m_baseLife: 100
   m_baseSpeed: 3
   m_baseFireRate: 3
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114928293847930332

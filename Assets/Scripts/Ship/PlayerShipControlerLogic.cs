@@ -8,6 +8,7 @@ public class PlayerShipControlerLogic : MonoBehaviour
     const string joysticFireXAxis = "JoyFireX";
     const string joysticFireYAxis = "JoyFireY";
 
+    [SerializeField] int m_baseSpeed;
     [SerializeField] float m_speedMultiplier;
     [SerializeField] float m_acceleration = 5;
     [SerializeField] float m_deadZone = 0.1f;
@@ -56,8 +57,8 @@ public class PlayerShipControlerLogic : MonoBehaviour
         if (dir.sqrMagnitude < m_deadZone * m_deadZone)
             dir = Vector2.zero;
 
-        Vector2 targetSpeed = m_ship.speed * m_speedMultiplier * dir;
-        float acceleration = m_ship.speed * m_acceleration;
+        Vector2 targetSpeed = (m_ship.speed + m_baseSpeed) * m_speedMultiplier * dir;
+        float acceleration = (m_ship.speed + m_baseSpeed ) * m_acceleration;
 
         if(targetSpeed.x > m_speed.x)
         {

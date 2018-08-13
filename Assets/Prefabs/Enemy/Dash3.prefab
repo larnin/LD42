@@ -660,7 +660,7 @@ MonoBehaviour:
   m_baseLife: 25
   m_baseSpeed: 1
   m_baseFireRate: 10
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!114 &114730097620803754
@@ -9767,7 +9767,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 73e4918228d96e24d979d3aca8b03458, type: 2}
+  - {fileID: 2100000, guid: b7bd9a4e394e0954fb7d5416218fe6b6, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

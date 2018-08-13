@@ -465,7 +465,7 @@ MonoBehaviour:
   m_baseLife: 15
   m_baseSpeed: 1
   m_baseFireRate: 7
-  m_basePower: 3
+  m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,
     type: 2}
 --- !u!212 &212736660137435446

@@ -403,7 +403,7 @@ MonoBehaviour:
   m_fireRateColor: {r: 0, g: 1, b: 0, a: 1}
   m_powerColor: {r: 0, g: 0.4745098, b: 1, a: 1}
   m_itemSpacing: 1.5
-  m_crusherTransitionTime: 0.5
+  m_crusherTransitionTime: 0.3
   m_crushTime: 2
   m_particlePlayTime: 0.2
   m_moveClip: {fileID: 8300000, guid: 03f6da218f4a4354383bacd03dc91adb, type: 3}
