@@ -18,10 +18,10 @@ public class LootLogic : SerializedMonoBehaviour
         var rand = new StaticRandomGenerator<DefaultRandomGenerator>();
         var d = new UniformFloatDistribution(m_minModifierLevel, m_maxModifierLevel);
 
-        modifier.life = (int)((float)modifier.life * m_baseModifierValue + d.Next(rand) * GameInfos.level);
-        modifier.speed = (int)((float)modifier.speed * m_baseModifierValue + d.Next(rand) * GameInfos.level);
-        modifier.fireRate = (int)((float)modifier.fireRate * m_baseModifierValue + d.Next(rand) * GameInfos.level);
-        modifier.power = (int)((float)modifier.power * m_baseModifierValue + d.Next(rand) * GameInfos.level);
+        modifier.life *= (int)((float)modifier.life * m_baseModifierValue + d.Next(rand) * GameInfos.level);
+        modifier.speed *= (int)((float)modifier.speed * m_baseModifierValue + d.Next(rand) * GameInfos.level);
+        modifier.fireRate *= (int)((float)modifier.fireRate * m_baseModifierValue + d.Next(rand) * GameInfos.level);
+        modifier.power *= (int)((float)modifier.power * m_baseModifierValue + d.Next(rand) * GameInfos.level);
     }
 
     private void Start()

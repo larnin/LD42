@@ -61,9 +61,9 @@ public class PlayerUILogic : MonoBehaviour
             Color c = m_lifeColor;
             if(i >= e.ship.life)
             {
-                c.r /= 2;
-                c.g /= 2;
-                c.b /= 2;
+                c.r /= 3;
+                c.g /= 3;
+                c.b /= 3;
             }
 
             var obj = new GameObject("Life" + i);

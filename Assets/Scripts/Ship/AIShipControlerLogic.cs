@@ -5,7 +5,7 @@ public class AIShipControlerLogic : MonoBehaviour
 {
     protected ShipLogic m_ship;
     protected LifebarLogic m_lifebar;
-
+    bool m_killed = false;
 
     private void Awake()
     {
@@ -13,6 +13,8 @@ public class AIShipControlerLogic : MonoBehaviour
         m_lifebar = GetComponentInChildren<LifebarLogic>();
 
         onAwake();
+
+        EnemyList.add(this);
     }
     protected virtual void onAwake() { }
 
@@ -30,6 +32,13 @@ public class AIShipControlerLogic : MonoBehaviour
         onUpdate();
     }
     protected virtual void onUpdate() { }
+
+    private void OnDestroy()
+    {
+        EnemyList.remove(this);
+        onDestroy();
+    }
+    protected virtual void onDestroy() { }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -57,6 +66,10 @@ public class AIShipControlerLogic : MonoBehaviour
 
     void onKill(bool dropLoot)
     {
+        if (m_killed)
+            return;
+        m_killed = true;
+
         if (dropLoot)
         {
             var loot = LootManagerLogic.instance.getRandomLoot();
