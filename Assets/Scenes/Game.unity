@@ -796,6 +796,12 @@ MonoBehaviour:
     - Name: power
       Entry: 3
       Data: 0
+    - Name: m_shootClip
+      Entry: 6
+      Data: 
+    - Name: m_shootClip2
+      Entry: 6
+      Data: 
     - Name: m_projectile
       Entry: 10
       Data: 1
@@ -1040,6 +1046,8 @@ MonoBehaviour:
   m_rotSpeed: 500
   m_invincibilityDuration: 1
   m_invincibilityBlinkSpeed: 20
+  m_takingDamageClip: {fileID: 8300000, guid: fb18cc55c967cb24b949f875dcb1df95, type: 3}
+  m_deathClip: {fileID: 8300000, guid: cd0bc4392a2cba74b9ede389f83463f4, type: 3}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,6 +2421,8 @@ MonoBehaviour:
   m_ennemyLabel: {fileID: 867372424}
   m_levelLabel: {fileID: 512362235}
   m_deathTime: 2
+  m_deathClip: {fileID: 8300000, guid: ad130b91f4674ea4aa2e4b2189916344, type: 3}
+  m_continueClip: {fileID: 8300000, guid: bae895cde7e237e438a80a1f997c06f7, type: 3}
 --- !u!1 &1058385133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2589,6 +2599,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_enableDelay: 2
+  m_victoryClip: {fileID: 0}
+  m_contineClip: {fileID: 8300000, guid: bae895cde7e237e438a80a1f997c06f7, type: 3}
 --- !u!1 &1274800784
 GameObject:
   m_ObjectHideFlags: 0
@@ -7875,6 +7887,8 @@ MonoBehaviour:
   m_player: {fileID: 150888864}
   m_lootRadius: 2
   m_buttonOffset: {x: 0.5, y: 0.5, z: -0.1}
+  m_takeObjectClip: {fileID: 8300000, guid: 3ecf5964bc517b4459ae47fb96b89d0a, type: 3}
+  m_warpClip: {fileID: 8300000, guid: 828564032d1993c498ee6b3836c82394, type: 3}
 --- !u!4 &1612537241
 Transform:
   m_ObjectHideFlags: 0
@@ -8294,11 +8308,6 @@ Prefab:
     - target: {fileID: 4576255043877800, guid: c5ce6d1c75f51ff499396bde0e8558e0, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114090704218652764, guid: c5ce6d1c75f51ff499396bde0e8558e0,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5ce6d1c75f51ff499396bde0e8558e0, type: 2}

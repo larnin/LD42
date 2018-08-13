@@ -8,10 +8,23 @@ public class BossKilledMenuLogic : MonoBehaviour
     const string cancelButton = "Cancel";
 
     [SerializeField] float m_enableDelay;
+    [SerializeField] AudioClip m_victoryClip;
+    [SerializeField] AudioClip m_contineClip;
 
     SubscriberList m_subscriberList = new SubscriberList();
 
     bool m_active = false;
+
+    private void Awake()
+    {
+        m_subscriberList.Add(new Event<BossKilledEvent>.Subscriber(onBossDie));
+        m_subscriberList.Subscribe();
+    }
+
+    private void OnDestroy()
+    {
+        m_subscriberList.Unsubscribe();
+    }
 
     void Start()
     {
@@ -29,12 +42,13 @@ public class BossKilledMenuLogic : MonoBehaviour
             onAction();
     }
 
-    void onBossDie()
+    void onBossDie(BossKilledEvent e)
     {
         DOVirtual.DelayedCall(m_enableDelay, () =>
         {
             if (this == null)
                 return;
+            SoundSystem.instance.play(m_victoryClip, 0.8f);
             gameObject.SetActive(true);
             m_active = true;
         });
@@ -42,6 +56,7 @@ public class BossKilledMenuLogic : MonoBehaviour
 
     void onAction()
     {
+        SoundSystem.instance.play(m_contineClip);
         var obj = GameObject.Find("Exit");
         if (obj != null)
             obj.transform.position = new Vector3(0, 0, 0);

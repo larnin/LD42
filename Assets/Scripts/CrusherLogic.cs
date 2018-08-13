@@ -27,6 +27,9 @@ public class CrusherLogic : MonoBehaviour
     [SerializeField] float m_crusherTransitionTime;
     [SerializeField] float m_crushTime = 2;
     [SerializeField] float m_particlePlayTime = 0.2f;
+    [SerializeField] AudioClip m_moveClip;
+    [SerializeField] AudioClip m_cancelClip;
+    [SerializeField] AudioClip m_crushClip;
 
     SubscriberList m_subscriverList = new SubscriberList();
     bool m_active = false;
@@ -177,6 +180,8 @@ public class CrusherLogic : MonoBehaviour
         if (index == m_crusherPosition)
             return;
 
+        SoundSystem.instance.play(m_moveClip);
+
         float targetX = (m_objects[index].transform.localPosition.x + m_objects[index+1].transform.localPosition.x)/2;
         m_crusher.transform.DOLocalMoveX(targetX, m_crusherTransitionTime).SetEase(Ease.Linear);
 
@@ -202,16 +207,20 @@ public class CrusherLogic : MonoBehaviour
         m_background.size = size;
         m_active = false;
 
+        SoundSystem.instance.play(m_crushClip);
+
         Event<PlayCameraEffectEvent>.Broadcast(new PlayCameraEffectEvent(CameraEffectType.Shake, 1, 0.5f));
 
         m_particles.Play();
         DOVirtual.DelayedCall(m_particlePlayTime, () => m_particles.Stop());
 
-        DOVirtual.DelayedCall(m_crushTime, onCancel);
+        DOVirtual.DelayedCall(m_crushTime, () => onCancel(false));
     }
 
-    void onCancel()
+    void onCancel(bool cancel = true)
     {
+        if (cancel)
+            SoundSystem.instance.play(m_cancelClip);
         gameObject.SetActive(false);
         GameInfos.paused = false;
     }

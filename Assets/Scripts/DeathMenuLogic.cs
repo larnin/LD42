@@ -10,6 +10,8 @@ public class DeathMenuLogic : MonoBehaviour
     [SerializeField] SpriteTextLogic m_ennemyLabel;
     [SerializeField] SpriteTextLogic m_levelLabel;
     [SerializeField] float m_deathTime = 2;
+    [SerializeField] AudioClip m_deathClip;
+    [SerializeField] AudioClip m_continueClip;
 
     SubscriberList m_subscriberList = new SubscriberList();
 
@@ -24,7 +26,10 @@ public class DeathMenuLogic : MonoBehaviour
     private void Update()
     {
         if (Input.GetButtonDown(acceptButton) || Input.GetButtonDown(cancelButton))
+        {
+            SoundSystem.instance.play(m_continueClip);
             SceneSystem.changeScene("Main");
+        }
     }
 
     private void OnDestroy()
@@ -36,6 +41,7 @@ public class DeathMenuLogic : MonoBehaviour
     {
         DOVirtual.DelayedCall(m_deathTime, () =>
         {
+            SoundSystem.instance.play(m_deathClip, 0.8f);
             gameObject.SetActive(true);
             m_ennemyLabel.setText(GameInfos.killCount.ToString(), Color.white);
             m_levelLabel.setText((GameInfos.level + 1).ToString(), Color.white);

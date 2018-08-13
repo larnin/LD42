@@ -8,6 +8,8 @@ public class LootPickerLogic : MonoBehaviour
     [SerializeField] GameObject m_player;
     [SerializeField] float m_lootRadius = 5;
     [SerializeField] Vector3 m_buttonOffset;
+    [SerializeField] AudioClip m_takeObjectClip;
+    [SerializeField] AudioClip m_warpClip;
 
     GameObject m_button;
     ShipLogic m_ship;
@@ -53,6 +55,7 @@ public class LootPickerLogic : MonoBehaviour
 
         if(Input.GetButtonDown(lootButton))
         {
+            SoundSystem.instance.play(m_takeObjectClip);
             if (m_ship.modifiers.Count < GameInfos.playerModifierCount)
             {
                 m_ship.modifiers.Add(loot.modifier);
@@ -73,6 +76,8 @@ public class LootPickerLogic : MonoBehaviour
 
         GameInfos.modifiers = m_ship.modifiers;
         GameInfos.life = m_ship.life;
+
+        SoundSystem.instance.play(m_warpClip, 0.8f);
 
         SceneSystem.changeScene("Game");
     }

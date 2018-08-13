@@ -391,7 +391,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1447446017146134}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b79d701fc8c38f46b9bbc817492d584, type: 3}
   m_Name: 
@@ -406,6 +406,9 @@ MonoBehaviour:
   m_crusherTransitionTime: 0.5
   m_crushTime: 2
   m_particlePlayTime: 0.2
+  m_moveClip: {fileID: 8300000, guid: 03f6da218f4a4354383bacd03dc91adb, type: 3}
+  m_cancelClip: {fileID: 8300000, guid: 84ddacc3f28294c43aeded2c74a15d60, type: 3}
+  m_crushClip: {fileID: 8300000, guid: 87a82fcf2302a3e4fad3a0d4058280b7, type: 3}
 --- !u!114 &114237561501042244
 MonoBehaviour:
   m_ObjectHideFlags: 1

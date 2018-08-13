@@ -14,6 +14,8 @@ public class PlayerShipControlerLogic : MonoBehaviour
     [SerializeField] float m_rotSpeed = 100;
     [SerializeField] float m_invincibilityDuration = 1.0f;
     [SerializeField] float m_invincibilityBlinkSpeed = 5;
+    [SerializeField] AudioClip m_takingDamageClip;
+    [SerializeField] AudioClip m_deathClip;
 
     ShipLogic m_ship;
     ParticleSystem m_particleSystem;
@@ -186,10 +188,12 @@ public class PlayerShipControlerLogic : MonoBehaviour
 
         if (m_ship.life <= 0)
             ondeath();
+        else SoundSystem.instance.play(m_takingDamageClip, 0.8f);
     }
 
     void ondeath()
     {
+        SoundSystem.instance.play(m_deathClip, 0.8f);
         Event<DieEvent>.Broadcast(new DieEvent());
         Destroy(gameObject);
     }

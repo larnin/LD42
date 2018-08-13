@@ -88,6 +88,8 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 21300000, guid: 0ec0137d1da4fb24a8f66daced6de90e, type: 3}
+    - {fileID: 8300000, guid: 84b1ca61664a0d54e908d3dae7d34902, type: 3}
+    - {fileID: 8300000, guid: 717b26497e57b364abf8196897b05c69, type: 3}
     - {fileID: 1102337172741502, guid: f59ef4f162a712549b328dabc398238d, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -112,9 +114,15 @@ MonoBehaviour:
     - Name: power
       Entry: 3
       Data: 0
-    - Name: m_projectile
+    - Name: m_shootClip
       Entry: 10
       Data: 1
+    - Name: m_shootClip2
+      Entry: 10
+      Data: 2
+    - Name: m_projectile
+      Entry: 10
+      Data: 3
     - Name: m_baseFireRate
       Entry: 4
       Data: 0.1

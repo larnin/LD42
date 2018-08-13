@@ -3,6 +3,9 @@ using System.Collections;
 
 public class AIShipControlerLogic : MonoBehaviour
 {
+    [SerializeField] AudioClip m_deathClip;
+    [SerializeField] AudioClip m_damageClip;
+
     protected ShipLogic m_ship;
     protected LifebarLogic m_lifebar;
     bool m_killed = false;
@@ -57,6 +60,7 @@ public class AIShipControlerLogic : MonoBehaviour
 
         if (m_ship.life <= 0)
             onKill(true);
+        else SoundSystem.instance.play(m_damageClip, 0.15f);
     }
 
     public void kill()
@@ -78,6 +82,8 @@ public class AIShipControlerLogic : MonoBehaviour
 
             GameInfos.killCount++;
         }
+
+        SoundSystem.instance.play(m_deathClip, 0.2f);
 
         Destroy(gameObject);
     }

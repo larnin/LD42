@@ -22,6 +22,9 @@ public class MainMenuLogic : SerializedMonoBehaviour
     [SerializeField] float m_notSelectedScale = 2.0f;
     [SerializeField] float m_delayAction = 1.0f;
     [SerializeField] List<ModifierBase> m_startModifiers;
+    [SerializeField] AudioClip m_moveClip;
+    [SerializeField] AudioClip m_selectClip;
+    [SerializeField] AudioClip m_cancelClip;
 
     int m_pos = -1;
     float m_oldAxis;
@@ -61,6 +64,9 @@ public class MainMenuLogic : SerializedMonoBehaviour
         if (newPos == m_pos)
             return;
 
+        if(m_pos >= 0)
+            SoundSystem.instance.play(m_moveClip);
+
         if (m_pos >= 0 && m_pos < m_buttons.Count)
             m_buttons[m_pos].DOScale(m_notSelectedScale, m_moveDuration).SetEase(Ease.Linear); ;
         m_buttons[newPos].DOScale(m_selectScale, m_moveDuration).SetEase(Ease.Linear);
@@ -72,6 +78,7 @@ public class MainMenuLogic : SerializedMonoBehaviour
 
     void onSubmit()
     {
+        SoundSystem.instance.play(m_selectClip);
         fire(m_projectilePrefab, m_cursor.gameObject, 0, m_projectileSpeed, 100, m_projectileColor);
 
         if (m_selected)
@@ -97,6 +104,7 @@ public class MainMenuLogic : SerializedMonoBehaviour
     {
         if (m_howToShown)
         {
+            SoundSystem.instance.play(m_cancelClip);
             m_howToScreen.SetActive(false);
             m_howToShown = false;
             m_selected = false;

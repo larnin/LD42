@@ -197,6 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779d133d6aeeec843a286d22739365d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_deathClip: {fileID: 8300000, guid: b36beaf742efa0d418319286009dd8bd, type: 3}
+  m_damageClip: {fileID: 8300000, guid: 99f395680e70b6c4d95921b41199b84a, type: 3}
   m_detectionRadius: 10
   m_baseRotationSpeed: 20
   m_targetedRotationSpeed: 360
@@ -253,6 +255,12 @@ MonoBehaviour:
     - Name: power
       Entry: 3
       Data: 0
+    - Name: m_shootClip
+      Entry: 6
+      Data: 
+    - Name: m_shootClip2
+      Entry: 6
+      Data: 
     - Name: m_projectile
       Entry: 10
       Data: 0
@@ -316,6 +324,12 @@ MonoBehaviour:
     - Name: power
       Entry: 3
       Data: 0
+    - Name: m_shootClip
+      Entry: 6
+      Data: 
+    - Name: m_shootClip2
+      Entry: 6
+      Data: 
     - Name: m_projectile
       Entry: 10
       Data: 0
@@ -379,6 +393,12 @@ MonoBehaviour:
     - Name: power
       Entry: 3
       Data: 0
+    - Name: m_shootClip
+      Entry: 6
+      Data: 
+    - Name: m_shootClip2
+      Entry: 6
+      Data: 
     - Name: m_projectile
       Entry: 10
       Data: 0
@@ -442,6 +462,12 @@ MonoBehaviour:
     - Name: power
       Entry: 3
       Data: 0
+    - Name: m_shootClip
+      Entry: 6
+      Data: 
+    - Name: m_shootClip2
+      Entry: 6
+      Data: 
     - Name: m_projectile
       Entry: 10
       Data: 0
@@ -505,6 +531,12 @@ MonoBehaviour:
     - Name: power
       Entry: 3
       Data: 0
+    - Name: m_shootClip
+      Entry: 6
+      Data: 
+    - Name: m_shootClip2
+      Entry: 6
+      Data: 
     - Name: m_projectile
       Entry: 10
       Data: 0
@@ -568,6 +600,12 @@ MonoBehaviour:
     - Name: power
       Entry: 3
       Data: 0
+    - Name: m_shootClip
+      Entry: 6
+      Data: 
+    - Name: m_shootClip2
+      Entry: 6
+      Data: 
     - Name: m_projectile
       Entry: 10
       Data: 0

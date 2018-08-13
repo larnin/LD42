@@ -6,6 +6,9 @@ using UnityEngine;
 
 public abstract class WeaponBase : ModifierBase
 {
+    [SerializeField] protected AudioClip m_shootClip;
+    [SerializeField] protected AudioClip m_shootClip2;
+
     public void fire(GameObject projectile, GameObject sender, Vector3 offset, float rot, int power, float speed, float life, Color color)
     {
         var obj = GameObject.Instantiate(projectile);
