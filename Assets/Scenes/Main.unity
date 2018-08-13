@@ -614,14 +614,174 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: 1f4fa3a9b752da9459771fd3ccf3abd1, type: 3}
+    - {fileID: 1764350852745916, guid: 82c6470312237814b83aeb1467fcb908, type: 2}
+    - {fileID: 21300000, guid: 358b0380de99c5c43ac9402103865e20, type: 3}
+    - {fileID: 21300000, guid: 7ce3516560e9b9e499a47d2ac3c6a683, type: 3}
+    - {fileID: 21300000, guid: 2ebaa958bfe414a41a6053301bd92c63, type: 3}
+    - {fileID: 21300000, guid: 3249c68e9b3b9e2478821be6a0f68df1, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
     - Name: m_startModifiers
-      Entry: 6
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[ModifierBase, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 1|WeaponSimple, Assembly-CSharp
+    - Name: m_image
+      Entry: 10
+      Data: 0
+    - Name: life
+      Entry: 3
+      Data: 0
+    - Name: speed
+      Entry: 3
+      Data: 0
+    - Name: fireRate
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: m_projectile
+      Entry: 10
+      Data: 1
+    - Name: m_rotationPerLevel
+      Entry: 4
+      Data: 10
+    - Name: m_baseFireRate
+      Entry: 4
+      Data: 0.5
+    - Name: m_powerMultiplier
+      Entry: 4
+      Data: 1
+    - Name: m_baseSpeed
+      Entry: 4
+      Data: 1
+    - Name: m_rateSpeed
+      Entry: 4
+      Data: 0.25
+    - Name: m_life
+      Entry: 4
+      Data: 5
+    - Name: m_color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|Modifier, Assembly-CSharp
+    - Name: m_image
+      Entry: 10
+      Data: 2
+    - Name: life
+      Entry: 3
+      Data: 1
+    - Name: speed
+      Entry: 3
+      Data: 0
+    - Name: fireRate
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|Modifier, Assembly-CSharp
+    - Name: m_image
+      Entry: 10
+      Data: 3
+    - Name: life
+      Entry: 3
+      Data: 0
+    - Name: speed
+      Entry: 3
+      Data: 1
+    - Name: fireRate
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|Modifier, Assembly-CSharp
+    - Name: m_image
+      Entry: 10
+      Data: 4
+    - Name: life
+      Entry: 3
+      Data: 0
+    - Name: speed
+      Entry: 3
+      Data: 0
+    - Name: fireRate
+      Entry: 3
+      Data: 1
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|Modifier, Assembly-CSharp
+    - Name: m_image
+      Entry: 10
+      Data: 5
+    - Name: life
+      Entry: 3
+      Data: 0
+    - Name: speed
+      Entry: 3
+      Data: 0
+    - Name: fireRate
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
   m_buttons:
   - {fileID: 1943186165}

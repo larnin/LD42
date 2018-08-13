@@ -212,7 +212,7 @@ public class CrusherLogic : MonoBehaviour
 
     void onCancel()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
         GameInfos.paused = false;
     }
 }

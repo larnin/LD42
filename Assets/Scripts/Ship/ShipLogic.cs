@@ -14,11 +14,11 @@ public class ShipLogic : SerializedMonoBehaviour
 
     public bool fire { get; set; }
 
-    int m_maxLife;
-    int m_life;
-    int m_speed;
-    int m_fireRate;
-    int m_power;
+    int m_maxLife = 0;
+    int m_life = 0;
+    int m_speed = 0;
+    int m_fireRate = 0;
+    int m_power = 0;
 
     public int maxLife { get { return m_maxLife; } }
     public int life { get { return m_life; } set { m_life = value; } }
@@ -30,6 +30,8 @@ public class ShipLogic : SerializedMonoBehaviour
 
     public void updateModifierStats()
     {
+        int oldMaxLife = m_maxLife;
+
         int life = m_baseLife;
         int speed = m_baseSpeed;
         int fireRate = m_baseFireRate;
@@ -43,6 +45,9 @@ public class ShipLogic : SerializedMonoBehaviour
             power += m.power;
         }
 
+        int addedLife = life - oldMaxLife;
+        if (addedLife > 0)
+            m_life += addedLife;
         m_maxLife = life;
         if (m_life > m_maxLife)
             m_life = m_maxLife;
@@ -57,7 +62,7 @@ public class ShipLogic : SerializedMonoBehaviour
 
     private void Awake()
     {
-        m_life = int.MaxValue;
+        m_life = 1000000;
         updateModifierStats();
     }
 

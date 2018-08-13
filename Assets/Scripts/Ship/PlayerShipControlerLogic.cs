@@ -33,6 +33,14 @@ public class PlayerShipControlerLogic : MonoBehaviour
 
     private void Start()
     {
+        if(GameInfos.modifiers != null)
+        {
+            m_ship.modifiers = GameInfos.modifiers;
+            m_ship.updateModifierStats();
+            m_ship.life = GameInfos.life;
+            if (m_ship.life > m_ship.maxLife)
+                m_ship.life = m_ship.maxLife;
+        }
         Event<UpdateUIEvent>.Broadcast(new UpdateUIEvent(m_ship));
     }
 
@@ -168,6 +176,7 @@ public class PlayerShipControlerLogic : MonoBehaviour
 
         m_ship.life -= power;
         Event<UpdateUIEvent>.Broadcast(new UpdateUIEvent(m_ship));
+        Debug.Log(m_ship.life);
 
         m_invincibilityTime = m_invincibilityDuration;
 

@@ -69,5 +69,11 @@ public class LootPickerLogic : MonoBehaviour
     {
         if (!GameInfos.hardmode)
             GameInfos.playerModifierCount++;
+        GameInfos.level++;
+
+        GameInfos.modifiers = m_ship.modifiers;
+        GameInfos.life = m_ship.life;
+
+        SceneSystem.changeScene("Game");
     }
 }
