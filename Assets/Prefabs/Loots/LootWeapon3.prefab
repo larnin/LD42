@@ -96,7 +96,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: m_modifier
       Entry: 7
-      Data: 0|WeaponSimple, Assembly-CSharp
+      Data: 0|WeaponStraight, Assembly-CSharp
     - Name: m_image
       Entry: 10
       Data: 0
@@ -115,15 +115,12 @@ MonoBehaviour:
     - Name: m_projectile
       Entry: 10
       Data: 1
-    - Name: m_rotationPerLevel
-      Entry: 4
-      Data: 10
     - Name: m_baseFireRate
       Entry: 4
-      Data: 0.5
+      Data: 0.1
     - Name: m_powerMultiplier
       Entry: 4
-      Data: 1
+      Data: 2
     - Name: m_baseSpeed
       Entry: 4
       Data: 1

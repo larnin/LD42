@@ -88,7 +88,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 21300000, guid: dc1334d08f083f543a5507c6a2cec897, type: 3}
-    - {fileID: 1764350852745916, guid: 82c6470312237814b83aeb1467fcb908, type: 2}
+    - {fileID: 1412265532124674, guid: 795bc4197318a864083d363947b06e82, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -96,7 +96,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: m_modifier
       Entry: 7
-      Data: 0|WeaponSimple, Assembly-CSharp
+      Data: 0|WeaponTriple, Assembly-CSharp
     - Name: m_image
       Entry: 10
       Data: 0
@@ -115,9 +115,12 @@ MonoBehaviour:
     - Name: m_projectile
       Entry: 10
       Data: 1
-    - Name: m_rotationPerLevel
+    - Name: m_rotation
       Entry: 4
-      Data: 10
+      Data: 30
+    - Name: m_offsetPerLevel
+      Entry: 4
+      Data: 0.25
     - Name: m_baseFireRate
       Entry: 4
       Data: 0.5
