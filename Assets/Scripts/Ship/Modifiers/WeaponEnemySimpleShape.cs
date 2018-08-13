@@ -27,7 +27,7 @@ public class WeaponEnemySimpleShape : WeaponBase
     {
         m_delayToNextProjectile -= Time.deltaTime;
 
-        if (/*ship.fire &&*/ m_delayToNextProjectile <= 0)
+        if (ship.fire && m_delayToNextProjectile <= 0)
         {
             m_projectileCount++;
             if (m_projectileCount >= m_weaponLevel)

@@ -14,7 +14,8 @@ public  class SimpleAIShipControlerLogic : AIShipControlerLogic
 
     protected override void onStart()
     {
-        m_target = GameObject.FindObjectOfType<PlayerShipControlerLogic>().transform;    
+        m_target = GameObject.FindObjectOfType<PlayerShipControlerLogic>().transform;
+        m_ship.fire = true;
     }
 
     protected override void onUpdate()
@@ -25,7 +26,7 @@ public  class SimpleAIShipControlerLogic : AIShipControlerLogic
 
         if (m_target == null)
             return;
-        if((m_target.transform.position - transform.position).sqrMagnitude < m_detectionRadius)
+        if((m_target.transform.position - transform.position).sqrMagnitude < m_detectionRadius * m_detectionRadius)
         {
             var dir = (m_target.transform.position - transform.position).normalized;
             dir *= m_baseMoveSpeed * m_ship.speed * Time.deltaTime;
