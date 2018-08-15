@@ -911,7 +911,7 @@ MonoBehaviour:
       Data: 3
     - Name: m_rotationPerLevel
       Entry: 4
-      Data: 10
+      Data: 7
     - Name: m_baseFireRate
       Entry: 4
       Data: 0.2

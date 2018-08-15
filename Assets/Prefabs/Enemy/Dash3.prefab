@@ -199,15 +199,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_deathClip: {fileID: 8300000, guid: b36beaf742efa0d418319286009dd8bd, type: 3}
   m_damageClip: {fileID: 8300000, guid: 99f395680e70b6c4d95921b41199b84a, type: 3}
+  m_damageAgroTime: 2
   m_detectionRadius: 10
   m_baseRotationSpeed: 20
   m_targetedRotationSpeed: 360
   m_baseTargetingSpeed: 2
   m_targetingFixedDelay: 1
-  m_baseDelayBetweenDash: 2
-  m_baseDelayAfterDashing: 0.5
-  m_dashRange: 10
-  m_dashSpeed: 3
+  m_baseDelayBetweenDash: 0.8
+  m_baseDelayAfterDashing: 0.2
+  m_dashRange: 15
+  m_dashSpeed: 1.5
   m_level: 3
 --- !u!114 &114509958613706922
 MonoBehaviour:
@@ -658,7 +659,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   m_baseLife: 25
-  m_baseSpeed: 1
+  m_baseSpeed: 3
   m_baseFireRate: 10
   m_basePower: 1
   m_deathPrefab: {fileID: 1507317486213002, guid: 6d88e797cd0c3c94ca2235e74cfad0b7,

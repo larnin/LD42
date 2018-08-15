@@ -30,7 +30,7 @@ public class LevelPopulatorLogic : MonoBehaviour
 
     private void Awake()
     {
-        if(m_bossLevel == GameInfos.level)
+        if((GameInfos.level + 1) % m_bossLevel == 0)
         {
             spawnBoss();
             return;
@@ -95,17 +95,20 @@ public class LevelPopulatorLogic : MonoBehaviour
     void spawnBoss()
     {
         var rand = new StaticRandomGenerator<DefaultRandomGenerator>();
-        Vector2 pos = Vector2.zero;
-        for (int j = 0; j < 10; j++)
+        for (int i = 0; i < GameInfos.bossKillCount + 1; i++)
         {
-            pos = new UniformVector2SquareDistribution(-m_spawnRadius, m_spawnRadius, -m_spawnRadius, m_spawnRadius).Next(rand);
-            if (pos.sqrMagnitude < m_dontSpawnRadius * m_dontSpawnRadius)
-                continue;
-            break;
-        }
+            Vector2 pos = Vector2.zero;
+            for (int j = 0; j < 10; j++)
+            {
+                pos = new UniformVector2SquareDistribution(-m_spawnRadius, m_spawnRadius, -m_spawnRadius, m_spawnRadius).Next(rand);
+                if (pos.sqrMagnitude < m_dontSpawnRadius * m_dontSpawnRadius)
+                    continue;
+                break;
+            }
 
-        var mob = Instantiate(m_bossPrefab);
-        mob.transform.position = new Vector3(pos.x, pos.y, -1);
+            var mob = Instantiate(m_bossPrefab);
+            mob.transform.position = new Vector3(pos.x, pos.y, -1);
+        }
 
         var exit = Instantiate(m_exitPrefab);
         exit.transform.position = new Vector3(0, 200, -1);

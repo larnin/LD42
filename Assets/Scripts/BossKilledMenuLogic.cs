@@ -48,15 +48,26 @@ public class BossKilledMenuLogic : MonoBehaviour
         {
             if (this == null)
                 return;
+
+            GameInfos.bossKillCount++;
+            if(GameInfos.bossKillCount > 1)
+            {
+                onAction(false);
+                return;
+            }
+
             SoundSystem.instance.play(m_victoryClip, 0.8f);
             gameObject.SetActive(true);
             m_active = true;
         });
     }
 
-    void onAction()
+    void onAction(bool playSound = true)
     {
-        SoundSystem.instance.play(m_contineClip);
+        if(playSound)
+            SoundSystem.instance.play(m_contineClip);
+        GameInfos.paused = false;
+        gameObject.SetActive(false);
         var obj = GameObject.Find("Exit");
         if (obj != null)
             obj.transform.position = new Vector3(0, 0, 0);

@@ -5,6 +5,7 @@ public class AIShipControlerLogic : MonoBehaviour
 {
     [SerializeField] AudioClip m_deathClip;
     [SerializeField] AudioClip m_damageClip;
+    [SerializeField] protected float m_damageAgroTime = 2;
 
     protected ShipLogic m_ship;
     protected LifebarLogic m_lifebar;
@@ -60,8 +61,13 @@ public class AIShipControlerLogic : MonoBehaviour
 
         if (m_ship.life <= 0)
             onKill(true);
-        else SoundSystem.instance.play(m_damageClip, 0.15f);
+        else
+        {
+            SoundSystem.instance.play(m_damageClip, 0.15f);
+            onDamage();
+        }
     }
+    protected virtual void onDamage() { }
 
     public void kill()
     {

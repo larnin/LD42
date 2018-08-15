@@ -31,12 +31,26 @@ public class CameraLogic : SerializedMonoBehaviour
     {
         pos = transform.position;
         vOffset = m_target.transform.position.z - transform.position.z;
+
+        m_subscriberList.Add(new Event<PlayCameraEffectEvent>.Subscriber(onPlayEffect));
+        m_subscriberList.Subscribe();
+    }
+
+    private void OnDestroy()
+    {
+        m_subscriberList.Unsubscribe();
     }
 
     void LateUpdate()
     {
         if (m_target == null)
+        {
+            transform.position = pos + m_effects[m_currentEffect].pos(m_effectPower);
+            m_effectTime -= Time.deltaTime;
+            if (m_effectTime < 0 && m_currentEffect != CameraEffectType.None)
+                m_currentEffect = CameraEffectType.None;
             return;
+        }
 
         var targetPos = m_target.transform.position;
         targetPos.z -= vOffset;

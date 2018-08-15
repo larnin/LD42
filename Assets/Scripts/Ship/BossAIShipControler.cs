@@ -38,6 +38,12 @@ public class BossAIShipControler : AIShipControlerLogic
 
         if (m_parentNode != null)
             m_parentNode.nextSegment = this;
+
+        Modifier m = new Modifier();
+        m.life = m_ship.life * GameInfos.bossKillCount;
+        m.fireRate = m_ship.fireRate * GameInfos.bossKillCount / 2;
+        m.power = m_ship.power * GameInfos.bossKillCount / 2;
+        m_ship.modifiers.Add(m);
     }
 
     protected override void onUpdate()

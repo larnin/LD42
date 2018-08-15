@@ -13,6 +13,7 @@ public static class GameInfos
     public static List<ModifierBase> modifiers;
     public static int life = int.MaxValue;
     public static int killCount;
+    public static int bossKillCount;
 
     public static void clear()
     {
@@ -24,5 +25,6 @@ public static class GameInfos
         modifiers = null;
         life = int.MaxValue;
         killCount = 0;
+        bossKillCount = 0;
     }
 }

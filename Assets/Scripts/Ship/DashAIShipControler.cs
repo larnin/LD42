@@ -34,6 +34,7 @@ public class DashAIShipControler : AIShipControlerLogic
 
     float m_dashCount;
     float m_durationToNextDash;
+    float m_agroTime;
 
     protected override void onStart()
     {
@@ -47,6 +48,8 @@ public class DashAIShipControler : AIShipControlerLogic
     {
         if (m_target == null)
             return;
+
+        m_agroTime -= Time.deltaTime;
 
         if (m_state == State.Idle)
             onIdle();
@@ -76,7 +79,7 @@ public class DashAIShipControler : AIShipControlerLogic
             float currentAngle = transform.rotation.eulerAngles.z + dAngle;
             transform.rotation = Quaternion.Euler(0, 0, currentAngle);
         }
-        else if(m_coldown < 0 && (m_target.transform.position - transform.position).sqrMagnitude < m_detectionRadius * m_detectionRadius)
+        else if(m_coldown < 0 && ((m_target.transform.position - transform.position).sqrMagnitude < m_detectionRadius * m_detectionRadius || m_agroTime > 0))
             m_targeted = true;
         else
         {
@@ -112,8 +115,9 @@ public class DashAIShipControler : AIShipControlerLogic
     void onDash()
     {
         m_durationToNextDash -= Time.deltaTime;
+        float dashTime = 1 / (m_dashSpeed * Mathf.Sqrt(m_ship.speed));
 
-        m_ship.fire = m_durationToNextDash > 0 && m_durationToNextDash < 1 / (m_dashSpeed * m_ship.speed);
+        m_ship.fire = m_durationToNextDash > 0 && m_durationToNextDash < dashTime;
 
         if(m_durationToNextDash < 0)
         {
@@ -126,9 +130,8 @@ public class DashAIShipControler : AIShipControlerLogic
             }
 
             m_dashCount++;
-            float dashTime = 1 / (m_dashSpeed * m_ship.speed);
+            
             m_durationToNextDash = dashTime + 1 / (m_baseDelayBetweenDash * m_ship.speed);
-
             transform.DOMove(transform.position + transform.right * m_dashRange, dashTime).SetEase(Ease.Linear);
 
             DOVirtual.DelayedCall(dashTime, () =>
@@ -142,5 +145,10 @@ public class DashAIShipControler : AIShipControlerLogic
             });
         }
         
+    }
+
+    protected override void onDamage()
+    {
+        m_agroTime = m_damageAgroTime;
     }
 }

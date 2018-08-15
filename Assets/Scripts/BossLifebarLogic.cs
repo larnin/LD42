@@ -15,7 +15,7 @@ public class BossLifebarLogic : MonoBehaviour
 
     void Start()
     {
-        if (m_activeLevel != GameInfos.level)
+        if ((GameInfos.level + 1)%m_activeLevel != 0)
         {
             gameObject.SetActive(false);
             return;

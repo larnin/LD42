@@ -204,6 +204,18 @@ MonoBehaviour:
   m_invincibilityBlinkSpeed: 20
   m_takingDamageClip: {fileID: 8300000, guid: fb18cc55c967cb24b949f875dcb1df95, type: 3}
   m_deathClip: {fileID: 8300000, guid: cd0bc4392a2cba74b9ede389f83463f4, type: 3}
+  m_contactPrefab: {fileID: 1650796593057618, guid: 7b222757f3e35484b8ab085388e18794,
+    type: 2}
+  m_lifeLossRadius: 2
+  m_lifeLossTime: 1
+  m_lifeLossShakeTime: 0.5
+  m_lifeLossShakePower: 0.15
+  m_lifeLossColor: {r: 0.47031072, g: 1, b: 0.4575472, a: 1}
+  m_deathRadius: 6
+  m_deathTime: 2
+  m_deathShakeTime: 1
+  m_deathShakePower: 0.4
+  m_deathColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &114655121099332346
 MonoBehaviour:
   m_ObjectHideFlags: 1

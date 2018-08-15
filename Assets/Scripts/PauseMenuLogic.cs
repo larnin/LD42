@@ -15,6 +15,9 @@ public class PauseMenuLogic : MonoBehaviour
     [SerializeField] float m_selectedScale = 2.5f;
     [SerializeField] float m_notSelectedScale = 1.5f;
     [SerializeField] float m_moveDuration = 0.2f;
+    [SerializeField] AudioClip m_moveClip;
+    [SerializeField] AudioClip m_selectClip;
+    [SerializeField] AudioClip m_cancelClip;
 
     bool m_active = false;
     int m_pos = -1;
@@ -38,6 +41,7 @@ public class PauseMenuLogic : MonoBehaviour
 
         if(Input.GetButtonDown(cancelButton))
         {
+            SoundSystem.instance.play(m_cancelClip);
             onContinue();
             return;
         }
@@ -62,6 +66,7 @@ public class PauseMenuLogic : MonoBehaviour
 
     void onSubmit()
     {
+        SoundSystem.instance.play(m_selectClip);
         if (m_pos == 0)
             onContinue();
         if (m_pos == 1)
@@ -80,7 +85,10 @@ public class PauseMenuLogic : MonoBehaviour
             return;
 
         if (m_pos >= 0 && m_pos < m_items.Count)
+        {
+            SoundSystem.instance.play(m_moveClip);
             m_items[m_pos].DOScale(m_notSelectedScale, m_moveDuration).SetEase(Ease.Linear); ;
+        }
         m_items[newPos].DOScale(m_selectedScale, m_moveDuration).SetEase(Ease.Linear);
 
         m_pos = newPos;

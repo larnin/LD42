@@ -17,6 +17,17 @@ public class PlayerShipControlerLogic : MonoBehaviour
     [SerializeField] float m_invincibilityBlinkSpeed = 5;
     [SerializeField] AudioClip m_takingDamageClip;
     [SerializeField] AudioClip m_deathClip;
+    [SerializeField] GameObject m_contactPrefab;
+    [SerializeField] float m_lifeLossRadius;
+    [SerializeField] float m_lifeLossTime;
+    [SerializeField] float m_lifeLossShakeTime;
+    [SerializeField] float m_lifeLossShakePower;
+    [SerializeField] Color m_lifeLossColor;
+    [SerializeField] float m_deathRadius;
+    [SerializeField] float m_deathTime;
+    [SerializeField] float m_deathShakeTime;
+    [SerializeField] float m_deathShakePower;
+    [SerializeField] Color m_deathColor;
 
     ShipLogic m_ship;
     ParticleSystem m_particleSystem;
@@ -132,7 +143,7 @@ public class PlayerShipControlerLogic : MonoBehaviour
         Color c = m_renderer.color;
         if (m_invincibilityTime > 0)
         {
-            m_renderer.color = new Color(c.r, c.g, c.b, Mathf.Sin(m_invincibilityTime * m_invincibilityBlinkSpeed) / 4 + 0.75f);
+            m_renderer.color = new Color(c.r, c.g, c.b, Mathf.Sin(m_invincibilityTime * m_invincibilityBlinkSpeed) / 3 + 0.66f);
         }
         else m_renderer.color = new Color(c.r, c.g, c.b);
     }
@@ -189,13 +200,40 @@ public class PlayerShipControlerLogic : MonoBehaviour
 
         if (m_ship.life <= 0)
             ondeath();
-        else SoundSystem.instance.play(m_takingDamageClip, 0.8f);
+        else
+        {
+            SoundSystem.instance.play(m_takingDamageClip, 0.8f);
+            instanciateDmg(false);
+        }
     }
 
     void ondeath()
     {
         SoundSystem.instance.play(m_deathClip, 0.8f);
         Event<DieEvent>.Broadcast(new DieEvent());
+        instanciateDmg(true);
         Destroy(gameObject);
+    }
+
+    void instanciateDmg(bool death)
+    {
+        var obj = Instantiate(m_contactPrefab);
+        obj.transform.position = transform.position;
+        var comp = obj.GetComponent<LifeLossExplosionLogic>();
+        var renderer = obj.GetComponent<SpriteRenderer>();
+        if(death)
+        {
+            comp.speed = m_deathRadius;
+            comp.duration = m_deathTime;
+            renderer.color = m_deathColor;
+            Event<PlayCameraEffectEvent>.Broadcast(new PlayCameraEffectEvent(CameraEffectType.Shake, m_deathShakePower, m_deathShakeTime));
+        }
+        else
+        {
+            comp.speed = m_lifeLossRadius;
+            comp.duration = m_lifeLossTime;
+            renderer.color = m_lifeLossColor;
+            Event<PlayCameraEffectEvent>.Broadcast(new PlayCameraEffectEvent(CameraEffectType.Shake, m_lifeLossShakePower, m_lifeLossShakeTime));
+        }
     }
 }
