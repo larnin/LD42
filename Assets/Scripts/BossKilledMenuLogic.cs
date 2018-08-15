@@ -5,7 +5,6 @@ using DG.Tweening;
 public class BossKilledMenuLogic : MonoBehaviour
 {
     const string submitButton = "Submit";
-    const string cancelButton = "Cancel";
 
     [SerializeField] float m_enableDelay;
     [SerializeField] AudioClip m_victoryClip;
@@ -38,7 +37,7 @@ public class BossKilledMenuLogic : MonoBehaviour
 
         GameInfos.paused = true;
 
-        if (Input.GetButtonDown(submitButton) || Input.GetButtonDown(cancelButton))
+        if (Input.GetButtonDown(submitButton))
             onAction();
     }
 

@@ -36,6 +36,16 @@ public class MainMenuLogic : SerializedMonoBehaviour
     {
         move(0);
         m_howToScreen.SetActive(false);
+
+        foreach(var button in m_buttons)
+        {
+            var comp = button.GetComponent<ButtonLogic>();
+            if(comp != null)
+            {
+                comp.onClickFunction = () => onClick(button);
+                comp.onEnterFunction = () => onHover(button);
+            }
+        }
     }
 
     private void Update()
@@ -53,6 +63,19 @@ public class MainMenuLogic : SerializedMonoBehaviour
             onSubmit();
         
         m_oldAxis = axis;
+    }
+
+    void onHover(Transform t)
+    {
+        int index = m_buttons.IndexOf(t);
+        if (index >= 0)
+            move(index);
+    }
+
+    void onClick(Transform t)
+    {
+        onHover(t);
+        onSubmit();
     }
 
     void move(int newPos)

@@ -5,7 +5,6 @@ using DG.Tweening;
 public class DeathMenuLogic : MonoBehaviour
 {
     const string acceptButton = "Submit";
-    const string cancelButton = "Cancel";
 
     [SerializeField] SpriteTextLogic m_ennemyLabel;
     [SerializeField] SpriteTextLogic m_levelLabel;
@@ -25,8 +24,9 @@ public class DeathMenuLogic : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown(acceptButton) || Input.GetButtonDown(cancelButton))
+        if (Input.GetButtonDown(acceptButton))
         {
+            GameInfos.paused = true;
             SoundSystem.instance.play(m_continueClip);
             SceneSystem.changeScene("Main");
         }
@@ -43,6 +43,7 @@ public class DeathMenuLogic : MonoBehaviour
         {
             SoundSystem.instance.play(m_deathClip, 0.8f);
             gameObject.SetActive(true);
+            GameInfos.paused = true;
             m_ennemyLabel.setText(GameInfos.killCount.ToString(), Color.white);
             m_levelLabel.setText((GameInfos.level + 1).ToString(), Color.white);
         });

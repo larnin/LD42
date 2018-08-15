@@ -222,6 +222,6 @@ public class CrusherLogic : MonoBehaviour
         if (cancel)
             SoundSystem.instance.play(m_cancelClip);
         gameObject.SetActive(false);
-        GameInfos.paused = false;
+        DOVirtual.DelayedCall(0.01f, () => GameInfos.paused = false);
     }
 }

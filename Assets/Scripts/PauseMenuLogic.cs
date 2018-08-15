@@ -26,11 +26,33 @@ public class PauseMenuLogic : MonoBehaviour
     void Start()
     {
         m_screen.SetActive(false);
+        foreach (var button in m_items)
+        {
+            var comp = button.GetComponent<ButtonLogic>();
+            if (comp != null)
+            {
+                comp.onClickFunction = () => onClick(button);
+                comp.onEnterFunction = () => onHover(button);
+            }
+        }
     }
-    
+
+    void onHover(Transform t)
+    {
+        int index = m_items.IndexOf(t);
+        if (index >= 0)
+            move(index);
+    }
+
+    void onClick(Transform t)
+    {
+        onHover(t);
+        onSubmit();
+    }
+
     void LateUpdate()
     {
-        if(!m_active && Input.GetButtonDown(pauseButton))
+        if(!m_active && Input.GetButtonDown(pauseButton) && !GameInfos.paused)
         {
             activate();
             return;
