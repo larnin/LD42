@@ -40,7 +40,7 @@ public class WeaponPulsed : WeaponBase
             else 
                 m_delayToNextProjectile = m_fireRate;
 
-            SoundSystem.instance.play(new BernoulliDistribution().Next(new StaticRandomGenerator<DefaultRandomGenerator>()) ? m_shootClip : m_shootClip2, 0.03f);
+            SoundSystem.instance.play(new BernoulliDistribution().Next(new StaticRandomGenerator<DefaultRandomGenerator>()) ? m_shootClip : m_shootClip2, 0.1f);
 
             float startOffset = -m_offset * (m_projectileCount-1) / 2;
             for(int i = 0; i < m_projectileCount; i++)

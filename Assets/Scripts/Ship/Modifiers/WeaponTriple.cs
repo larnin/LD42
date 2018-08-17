@@ -30,7 +30,7 @@ public class WeaponTriple : WeaponBase
         {
             m_delayToNextProjectile = m_fireRate;
             
-            SoundSystem.instance.play(new BernoulliDistribution().Next(new StaticRandomGenerator<DefaultRandomGenerator>()) ? m_shootClip : m_shootClip2, 0.03f);
+            SoundSystem.instance.play(new BernoulliDistribution().Next(new StaticRandomGenerator<DefaultRandomGenerator>()) ? m_shootClip : m_shootClip2, 0.1f);
             fire(m_projectile, ship.gameObject, new Vector3(0, m_offset, 1), 0, (int)m_power, m_baseSpeed + m_rateSpeed * ship.fireRate, m_life, m_color);
             fire(m_projectile, ship.gameObject, new Vector3(0, m_offset, 1), -m_rotation, (int)m_power, m_baseSpeed + m_rateSpeed * ship.fireRate, m_life, m_color);
             fire(m_projectile, ship.gameObject, new Vector3(0, m_offset, 1), m_rotation, (int)m_power, m_baseSpeed + m_rateSpeed * ship.fireRate, m_life, m_color);
