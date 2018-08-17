@@ -7,6 +7,9 @@ public class PlayerShipControlerLogic : MonoBehaviour
     const string verticalAxis = "Vertical";
     const string joysticFireXAxis = "JoyFireX";
     const string joysticFireYAxis = "JoyFireY";
+    const string mouseXAxis = "MouseX";
+    const string mouseYAxis = "MouseY";
+    const string mouseButton = "MouseFire";
 
     [SerializeField] int m_baseSpeed;
     [SerializeField] float m_speedMultiplier;
@@ -28,14 +31,20 @@ public class PlayerShipControlerLogic : MonoBehaviour
     [SerializeField] float m_deathShakeTime;
     [SerializeField] float m_deathShakePower;
     [SerializeField] Color m_deathColor;
+    [SerializeField] float m_cursorSpeed;
+    [SerializeField] float m_maxCursorDistance;
+    [SerializeField] float m_cursorHideDelay;
 
     ShipLogic m_ship;
     ParticleSystem m_particleSystem;
     SpriteRenderer m_renderer;
+    Transform m_cursor;
 
     Vector2 m_speed;
     float m_orientation;
     float m_invincibilityTime;
+    float m_timeFromLastCursorMove;
+    Vector2 m_cursorOffset;
 
     private void Awake()
     {
@@ -43,6 +52,11 @@ public class PlayerShipControlerLogic : MonoBehaviour
         m_particleSystem = GetComponentInChildren<ParticleSystem>();
         m_particleSystem.Stop();
         m_renderer = GetComponent<SpriteRenderer>();
+        m_cursor = transform.Find("Cursor");
+        m_timeFromLastCursorMove = m_cursorHideDelay;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Start()
@@ -107,7 +121,14 @@ public class PlayerShipControlerLogic : MonoBehaviour
 
         var targetAngle = m_orientation;
         if (fireDir.sqrMagnitude > 0)
+        {
+            m_timeFromLastCursorMove = m_cursorHideDelay;
             targetAngle = Vector2.SignedAngle(new Vector2(1, 0), fireDir);
+        }
+        else if(m_timeFromLastCursorMove < m_cursorHideDelay)
+        {
+            targetAngle = Vector2.SignedAngle(new Vector2(1, 0), m_cursorOffset);
+        }
         else if(dir.sqrMagnitude > 0)
             targetAngle = Vector2.SignedAngle(new Vector2(1, 0), dir);
 
@@ -137,7 +158,7 @@ public class PlayerShipControlerLogic : MonoBehaviour
         else if(!m_particleSystem.isEmitting)
             m_particleSystem.Play();
 
-        m_ship.fire = fireDir.sqrMagnitude > 0.1 * 0.1;
+        m_ship.fire = fireDir.sqrMagnitude > 0.1 * 0.1 || Input.GetButton(mouseButton);
 
         m_invincibilityTime -= Time.deltaTime;
         Color c = m_renderer.color;
@@ -146,6 +167,8 @@ public class PlayerShipControlerLogic : MonoBehaviour
             m_renderer.color = new Color(c.r, c.g, c.b, Mathf.Sin(m_invincibilityTime * m_invincibilityBlinkSpeed) / 3 + 0.66f);
         }
         else m_renderer.color = new Color(c.r, c.g, c.b);
+
+        updateMouseCursor();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -235,5 +258,24 @@ public class PlayerShipControlerLogic : MonoBehaviour
             renderer.color = m_lifeLossColor;
             Event<PlayCameraEffectEvent>.Broadcast(new PlayCameraEffectEvent(CameraEffectType.Shake, m_lifeLossShakePower, m_lifeLossShakeTime));
         }
+    }
+
+    void updateMouseCursor()
+    {
+        m_timeFromLastCursorMove += Time.deltaTime;
+        m_cursor.gameObject.SetActive(m_timeFromLastCursorMove <= m_cursorHideDelay);
+
+        Vector2 offset = new Vector2(Input.GetAxisRaw(mouseXAxis), Input.GetAxisRaw(mouseYAxis));
+
+        if(Mathf.Abs(offset.x) > 0 || Mathf.Abs(offset.y) > 0 || Input.GetButton(mouseButton))
+            m_timeFromLastCursorMove = 0;
+
+        offset *= m_cursorSpeed;
+        m_cursorOffset += offset;
+        float offsetLenght = m_cursorOffset.magnitude;
+        if (offsetLenght > m_maxCursorDistance)
+            m_cursorOffset *= m_maxCursorDistance / offsetLenght;
+
+        m_cursor.transform.position = transform.position + new Vector3(m_cursorOffset.x, m_cursorOffset.y, -0.1f);
     }
 }

@@ -83,6 +83,8 @@ public class PauseMenuLogic : MonoBehaviour
         GameInfos.paused = true;
         GameInfos.pauseMenu = true;
         m_screen.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         move(0);
     }
 
@@ -122,6 +124,8 @@ public class PauseMenuLogic : MonoBehaviour
         GameInfos.paused = false;
         GameInfos.pauseMenu = false;
         m_screen.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void onMain()

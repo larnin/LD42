@@ -46,6 +46,9 @@ public class MainMenuLogic : SerializedMonoBehaviour
                 comp.onEnterFunction = () => onHover(button);
             }
         }
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void Update()
