@@ -35,6 +35,8 @@ public class PauseMenuLogic : MonoBehaviour
                 comp.onEnterFunction = () => onHover(button);
             }
         }
+
+        DOVirtual.DelayedCall(0.01f, () => m_items.RemoveAll(x => { return x == null; }));
     }
 
     void onHover(Transform t)

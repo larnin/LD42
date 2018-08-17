@@ -49,6 +49,8 @@ public class MainMenuLogic : SerializedMonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        DOVirtual.DelayedCall(0.01f, () => m_buttons.RemoveAll(x=> { return x == null; }));
     }
 
     private void Update()
