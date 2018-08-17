@@ -2326,7 +2326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_enableDelay: 2
-  m_victoryClip: {fileID: 0}
+  m_victoryClip: {fileID: 8300000, guid: d7ad36a9c9ddeb44089a66fc83def38e, type: 3}
   m_contineClip: {fileID: 8300000, guid: bae895cde7e237e438a80a1f997c06f7, type: 3}
 --- !u!1 &1274800784
 GameObject:
